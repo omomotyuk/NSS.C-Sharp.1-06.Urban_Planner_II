@@ -7,6 +7,8 @@ namespace _1_06.Urban_Planner_II
     {
         static void Main(string[] args)
         {
+            City city = new City("Future", 2019, "Big Mayor");
+
             List<Building> buildings = new List<Building>();
 
             buildings.Add( newBuilding("512 8th Avenue", 10_0, 10_0, 1, "First Owner") );
@@ -15,8 +17,12 @@ namespace _1_06.Urban_Planner_II
 
             foreach( Building building in buildings )
             {
-                building.PrintInfo();
+                //building.PrintInfo();
+                city.AddBuilding( building );
             }
+
+            city.PrintCityInfo();
+            city.GetBuildingsInfo();
         }
 
         static Building newBuilding( string address, double width, double depth, int stories, string owner )
